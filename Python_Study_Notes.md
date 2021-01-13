@@ -193,9 +193,9 @@ temp = temp[:2] + ('add') + temp[2:] #将add插入到temp[2]
 
 ## 字符串 
 
-![image-20210112185619540](C:\Users\a1135\AppData\Roaming\Typora\typora-user-images\image-20210112185619540.png)
+![Char_Method1](https://github.com/InImpasse/Python_Study_Notes/blob/main/Note_Picture/Char_Method1.png)
 
-![image-20210112185644442](C:\Users\a1135\AppData\Roaming\Typora\typora-user-images\image-20210112185644442.png)
+![Char_Method2](https://github.com/InImpasse/Python_Study_Notes/blob/main/Note_Picture/Char_Method2.png)
 
 ```python
 str1 = 'woshishuaibi'
