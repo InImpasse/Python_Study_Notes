@@ -510,3 +510,110 @@ Fun1()
 #25
 ```
 
+### 匿名函数
+
+#### lambda表达式的作用
+
+1. python写一些执行脚本的时候，lambda可以剩下定义函数的过程，是的代码更加精简
+2. 对于比较抽象且执行只需要调用一两次的函数，不用单独给函数起名，用lambda替代即可
+3. 简化代码可读性
+
+```python
+def ds(x)
+	return 2 * x + 1
+
+ds(5)
+#11
+```
+
+```python
+lambda x : 2 * x + 1 #只是返回一个没有名字的函数对象，不使用时，内存会自动清除这个函数
+#<function <lambda> at 0x00000144A9A57310>
+```
+
+```python
+lambda x , y : x + y
+#<function <lambda> at 0x00000144A9A57430>
+
+g = lambda x , y : x + y
+g(3,4)
+#7
+```
+
+### 内置函数（BIF）
+
+#### filter()
+
+过滤器
+
+```python
+list(filter(None, [1, 0, False, True])) #filter()输出为True或1的值
+#[1, True]
+```
+
+##### 输出0-9范围内的奇数
+
+```python
+#输出0-9范围内的奇数1
+def odd(x)
+	return x % 2 #对2求余
+temp = range(10) #范围0-9
+show = filter(odd,temp) #输出余数为1的数（奇数）
+list(show)
+#[1,3,5,7,9]
+```
+
+```python
+#输出0-9范围内的奇数2（lambda）
+list(filter(lambda x : x % 2,range(10))
+#[1,3,5,7,9]
+```
+
+#### map()
+
+映射
+
+```python
+list(map(lambda x : x * 2,range(10))
+#[0,2,4,6,8,10,12,14,16,18]
+```
+
+## 递归
+
+### 什么是递归
+
+函数调用自身的行为
+
+```python
+def recursion():
+	return recursion() #调用会是一个死循环，python保护递归最大深度100层
+```
+
+### 设置递归深度
+
+```python
+import sys
+sys.setrecursionlimit(层数)
+```
+
+### 递归的应用
+
+#### 递归求阶乘
+
+正整数阶乘从1 * 2 * 3 * 4 * ... * n
+
+```python
+#非递归版本
+def factorial(n):
+	result = n
+	for i in range(1,n):
+		result *= i
+	return result
+
+number = int(input('请输入一个正整数：'))、
+result = factorial(number)
+print('%d的阶乘是：%d'%(number,result))
+```
+
+
+
